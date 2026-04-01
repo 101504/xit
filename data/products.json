@@ -1,0 +1,220 @@
+{
+  "glasses": [
+    {
+      "id": "wayfarer-classic",
+      "name": "Wayfarer Classic",
+      "model": "RB2140",
+      "price": 169,
+      "category": "classic",
+      "faceShapes": ["oval", "round", "square"],
+      "style": ["casual", "vintage", "everyday"],
+      "sustainability": true,
+      "colors": {
+        "frame": [
+          { "id": "black", "name": "Black", "hex": "#000000", "price": 0 },
+          { "id": "tortoise", "name": "Tortoise", "hex": "#8B4513", "price": 0 },
+          { "id": "blue", "name": "Blue", "hex": "#2E5090", "price": 10 }
+        ],
+        "lens": [
+          { "id": "green-classic", "name": "Classic Green", "hex": "#2C5234", "price": 0 },
+          { "id": "gradient-grey", "name": "Gradient Grey", "hex": "#4A4A4A", "price": 15 },
+          { "id": "polarized-brown", "name": "Polarized Brown", "hex": "#5C4033", "price": 50 }
+        ]
+      },
+      "defaultColor": {
+        "frame": "black",
+        "lens": "green-classic"
+      },
+      "image": "wayfarer-classic.jpg"
+    },
+    {
+      "id": "aviator-classic",
+      "name": "Aviator Classic",
+      "model": "RB3025",
+      "price": 179,
+      "category": "aviator",
+      "faceShapes": ["oval", "heart", "square"],
+      "style": ["sport", "classic", "outdoor"],
+      "sustainability": false,
+      "colors": {
+        "frame": [
+          { "id": "gold", "name": "Gold", "hex": "#D4AF37", "price": 0 },
+          { "id": "silver", "name": "Silver", "hex": "#C0C0C0", "price": 0 },
+          { "id": "black", "name": "Black", "hex": "#000000", "price": 10 }
+        ],
+        "lens": [
+          { "id": "green-classic", "name": "Classic Green", "hex": "#2C5234", "price": 0 },
+          { "id": "blue-mirror", "name": "Blue Mirror", "hex": "#4169E1", "price": 30 },
+          { "id": "polarized-brown", "name": "Polarized Brown", "hex": "#5C4033", "price": 50 }
+        ]
+      },
+      "defaultColor": {
+        "frame": "gold",
+        "lens": "green-classic"
+      },
+      "image": "aviator-classic.jpg"
+    },
+    {
+      "id": "clubmaster",
+      "name": "Clubmaster",
+      "model": "RB3016",
+      "price": 189,
+      "category": "classic",
+      "faceShapes": ["oval", "round", "diamond"],
+      "style": ["vintage", "sophisticated", "everyday"],
+      "sustainability": true,
+      "colors": {
+        "frame": [
+          { "id": "tortoise-gold", "name": "Tortoise/Gold", "hex": "#8B4513", "price": 0 },
+          { "id": "black-gold", "name": "Black/Gold", "hex": "#000000", "price": 0 },
+          { "id": "red-gold", "name": "Red/Gold", "hex": "#8B0000", "price": 15 }
+        ],
+        "lens": [
+          { "id": "green-classic", "name": "Classic Green", "hex": "#2C5234", "price": 0 },
+          { "id": "gradient-grey", "name": "Gradient Grey", "hex": "#4A4A4A", "price": 15 },
+          { "id": "polarized-blue", "name": "Polarized Blue", "hex": "#191970", "price": 50 }
+        ]
+      },
+      "defaultColor": {
+        "frame": "tortoise-gold",
+        "lens": "green-classic"
+      },
+      "image": "clubmaster.jpg"
+    },
+    {
+      "id": "round-metal",
+      "name": "Round Metal",
+      "model": "RB3447",
+      "price": 169,
+      "category": "round",
+      "faceShapes": ["square", "oval", "heart"],
+      "style": ["vintage", "bohemian", "fashion"],
+      "sustainability": false,
+      "colors": {
+        "frame": [
+          { "id": "gold", "name": "Gold", "hex": "#D4AF37", "price": 0 },
+          { "id": "silver", "name": "Silver", "hex": "#C0C0C0", "price": 0 },
+          { "id": "copper", "name": "Copper", "hex": "#B87333", "price": 10 }
+        ],
+        "lens": [
+          { "id": "green-classic", "name": "Classic Green", "hex": "#2C5234", "price": 0 },
+          { "id": "pink-mirror", "name": "Pink Mirror", "hex": "#FF69B4", "price": 30 },
+          { "id": "brown-gradient", "name": "Brown Gradient", "hex": "#5C4033", "price": 20 }
+        ]
+      },
+      "defaultColor": {
+        "frame": "gold",
+        "lens": "green-classic"
+      },
+      "image": "round-metal.jpg"
+    },
+    {
+      "id": "justin",
+      "name": "Justin",
+      "model": "RB4165",
+      "price": 159,
+      "category": "modern",
+      "faceShapes": ["oval", "round", "square"],
+      "style": ["casual", "modern", "sport"],
+      "sustainability": true,
+      "colors": {
+        "frame": [
+          { "id": "black-rubber", "name": "Black Rubber", "hex": "#1C1C1C", "price": 0 },
+          { "id": "blue-rubber", "name": "Blue Rubber", "hex": "#2E5090", "price": 0 },
+          { "id": "tortoise", "name": "Tortoise", "hex": "#8B4513", "price": 10 }
+        ],
+        "lens": [
+          { "id": "grey-mirror", "name": "Grey Mirror", "hex": "#708090", "price": 20 },
+          { "id": "green-classic", "name": "Classic Green", "hex": "#2C5234", "price": 0 },
+          { "id": "polarized-blue", "name": "Polarized Blue", "hex": "#191970", "price": 50 }
+        ]
+      },
+      "defaultColor": {
+        "frame": "black-rubber",
+        "lens": "grey-mirror"
+      },
+      "image": "justin.jpg"
+    },
+    {
+      "id": "erika",
+      "name": "Erika",
+      "model": "RB4171",
+      "price": 169,
+      "category": "modern",
+      "faceShapes": ["oval", "heart", "diamond"],
+      "style": ["fashion", "elegant", "everyday"],
+      "sustainability": true,
+      "colors": {
+        "frame": [
+          { "id": "black", "name": "Black", "hex": "#000000", "price": 0 },
+          { "id": "tortoise", "name": "Tortoise", "hex": "#8B4513", "price": 0 },
+          { "id": "velvet", "name": "Velvet Violet", "hex": "#8B008B", "price": 15 }
+        ],
+        "lens": [
+          { "id": "brown-gradient", "name": "Brown Gradient", "hex": "#5C4033", "price": 0 },
+          { "id": "green-classic", "name": "Classic Green", "hex": "#2C5234", "price": 0 },
+          { "id": "polarized-grey", "name": "Polarized Grey", "hex": "#696969", "price": 50 }
+        ]
+      },
+      "defaultColor": {
+        "frame": "black",
+        "lens": "brown-gradient"
+      },
+      "image": "erika.jpg"
+    },
+    {
+      "id": "new-wayfarer",
+      "name": "New Wayfarer",
+      "model": "RB2132",
+      "price": 159,
+      "category": "classic",
+      "faceShapes": ["oval", "round", "square", "heart"],
+      "style": ["casual", "everyday", "versatile"],
+      "sustainability": false,
+      "colors": {
+        "frame": [
+          { "id": "black", "name": "Black", "hex": "#000000", "price": 0 },
+          { "id": "tortoise", "name": "Tortoise", "hex": "#8B4513", "price": 0 },
+          { "id": "matte-black", "name": "Matte Black", "hex": "#28282B", "price": 10 }
+        ],
+        "lens": [
+          { "id": "green-classic", "name": "Classic Green", "hex": "#2C5234", "price": 0 },
+          { "id": "gradient-grey", "name": "Gradient Grey", "hex": "#4A4A4A", "price": 15 },
+          { "id": "blue-gradient", "name": "Blue Gradient", "hex": "#4169E1", "price": 20 }
+        ]
+      },
+      "defaultColor": {
+        "frame": "black",
+        "lens": "green-classic"
+      },
+      "image": "new-wayfarer.jpg"
+    },
+    {
+      "id": "caravan",
+      "name": "Caravan",
+      "model": "RB3136",
+      "price": 179,
+      "category": "aviator",
+      "faceShapes": ["square", "oval", "round"],
+      "style": ["vintage", "outdoor", "adventure"],
+      "sustainability": false,
+      "colors": {
+        "frame": [
+          { "id": "gold", "name": "Gold", "hex": "#D4AF37", "price": 0 },
+          { "id": "gunmetal", "name": "Gunmetal", "hex": "#5C5C5C", "price": 0 },
+          { "id": "bronze", "name": "Bronze", "hex": "#CD7F32", "price": 10 }
+        ],
+        "lens": [
+          { "id": "green-classic", "name": "Classic Green", "hex": "#2C5234", "price": 0 },
+          { "id": "brown-gradient", "name": "Brown Gradient", "hex": "#5C4033", "price": 15 },
+          { "id": "polarized-green", "name": "Polarized Green", "hex": "#2C5234", "price": 50 }
+        ]
+      },
+      "defaultColor": {
+        "frame": "gold",
+        "lens": "green-classic"
+      },
+      "image": "caravan.jpg"
+    }
+  ]
+}
