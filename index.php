@@ -38,21 +38,30 @@
         <!-- Face Scan Screen -->
         <div id="scan-screen" class="screen">
             <div class="screen-header">
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 28%;"></div>
+                </div>
                 <h2 data-i18n="scan_title">FACE SCAN</h2>
                 <p data-i18n="scan_subtitle">Position your face in the frame</p>
             </div>
             
             <div class="camera-container">
-                <video id="camera" autoplay playsinline></video>
+                <video id="camera" autoplay playsinline muted></video>
                 <div class="camera-overlay"></div>
+                <div class="camera-guide">
+                    <div class="guide-text">
+                        <span>👤</span>
+                        <p data-i18n="align_face">Align your face with the oval</p>
+                    </div>
+                </div>
             </div>
             
             <div class="screen-footer">
                 <button class="btn btn-secondary" data-action="back">
-                    <span data-i18n="back">← Back</span>
+                    <span>←</span> <span data-i18n="back">Back</span>
                 </button>
                 <button class="btn btn-primary" data-action="capture">
-                    <span data-i18n="scan_button">Capture</span>
+                    <span>📸</span> <span data-i18n="scan_button">Capture</span>
                 </button>
             </div>
         </div>
@@ -60,6 +69,9 @@
         <!-- Preferences Screen -->
         <div id="preferences-screen" class="screen">
             <div class="screen-header">
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 42%;"></div>
+                </div>
                 <h2 data-i18n="preferences_title">YOUR STYLE</h2>
                 <p data-i18n="preferences_subtitle">What are you looking for?</p>
             </div>
@@ -119,6 +131,9 @@
         <!-- Results Screen -->
         <div id="results-screen" class="screen">
             <div class="screen-header">
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 57%;"></div>
+                </div>
                 <h2 data-i18n="results_title">YOUR RECOMMENDATIONS</h2>
                 <p data-i18n="results_subtitle">We found these perfect matches for you</p>
             </div>
@@ -139,6 +154,9 @@
         <!-- Customization Screen -->
         <div id="customize-screen" class="screen">
             <div class="screen-header">
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 71%;"></div>
+                </div>
                 <h2 data-i18n="customize_title">CUSTOMIZE YOUR RAY-BAN</h2>
                 <div style="margin-top: 16px;">
                     <h3 id="custom-product-name" style="margin-bottom: 8px;">Wayfarer Classic</h3>
@@ -191,6 +209,9 @@
         <!-- Email Screen -->
         <div id="email-screen" class="screen">
             <div class="screen-header">
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 85%;"></div>
+                </div>
                 <h2 data-i18n="email_title">SAVE YOUR LOOK</h2>
                 <p data-i18n="email_subtitle">We'll send you all the details</p>
             </div>
