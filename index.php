@@ -15,8 +15,77 @@
     
     <!-- QR Code Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    
+    <style>
+        /* Loading Splash Screen */
+        #splash-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 99999;
+            transition: opacity 0.5s ease;
+        }
+        
+        #splash-screen.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+        
+        .splash-logo {
+            font-family: 'Oswald', sans-serif;
+            font-size: 120px;
+            font-weight: 700;
+            color: #fff;
+            letter-spacing: 8px;
+            text-transform: uppercase;
+            margin-bottom: 32px;
+            animation: fadeInUp 1s ease;
+        }
+        
+        .splash-tagline {
+            font-family: 'Lato', sans-serif;
+            font-size: 32px;
+            color: #ccc;
+            margin-bottom: 64px;
+            animation: fadeInUp 1s ease 0.3s both;
+        }
+        
+        .splash-spinner {
+            width: 60px;
+            height: 60px;
+            border: 4px solid rgba(255, 255, 255, 0.1);
+            border-top-color: #fff;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
 </head>
 <body>
+    <!-- Splash Screen -->
+    <div id="splash-screen">
+        <div class="splash-logo">RAY-BAN</div>
+        <div class="splash-tagline">Smart Wall Experience</div>
+        <div class="splash-spinner"></div>
+    </div>
+    
     <div class="container">
         
         <!-- Welcome Screen -->
@@ -270,6 +339,26 @@
 
     <!-- Main Application Script -->
     <script src="assets/js/app.js"></script>
+    
+    <!-- Attract Loop Script -->
+    <script src="assets/js/attract.js"></script>
+    
+    <!-- Splash Screen Handler -->
+    <script>
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                const splash = document.getElementById('splash-screen');
+                splash.classList.add('hidden');
+                setTimeout(() => {
+                    splash.remove();
+                    // Initialize attract loop after splash
+                    if (window.smartWall && !window.attractLoop) {
+                        window.attractLoop = new AttractLoop(window.smartWall);
+                    }
+                }, 500);
+            }, 2000);
+        });
+    </script>
     
     <!-- Auto-reset timer for success screen -->
     <script>

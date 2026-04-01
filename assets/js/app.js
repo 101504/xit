@@ -53,6 +53,7 @@ class SmartWall {
         select_language: "Select Language",
         scan_title: "FACE SCAN",
         scan_subtitle: "Position your face in the frame",
+        align_face: "Align your face with the oval",
         scan_button: "Capture",
         scanning: "Analyzing...",
         preferences_title: "YOUR STYLE",
@@ -75,6 +76,7 @@ class SmartWall {
         frame_color: "Frame Color",
         lens_color: "Lens Color",
         price: "Price",
+        total_price: "Total Price",
         save_config: "Save Configuration",
         email_title: "SAVE YOUR LOOK",
         email_subtitle: "We'll send you all the details",
@@ -94,6 +96,7 @@ class SmartWall {
         select_language: "Kies Taal",
         scan_title: "GEZICHTSSCAN",
         scan_subtitle: "Plaats je gezicht in het kader",
+        align_face: "Plaats je gezicht in het ovaal",
         scan_button: "Vastleggen",
         scanning: "Analyseren...",
         preferences_title: "JOUW STIJL",
@@ -116,6 +119,7 @@ class SmartWall {
         frame_color: "Montuur Kleur",
         lens_color: "Glas Kleur",
         price: "Prijs",
+        total_price: "Totale Prijs",
         save_config: "Configuratie Opslaan",
         email_title: "BEWAAR JE LOOK",
         email_subtitle: "We sturen je alle details",
@@ -135,6 +139,7 @@ class SmartWall {
         select_language: "Choisir la Langue",
         scan_title: "SCAN DU VISAGE",
         scan_subtitle: "Positionnez votre visage dans le cadre",
+        align_face: "Alignez votre visage dans l'ovale",
         scan_button: "Capturer",
         scanning: "Analyse...",
         preferences_title: "VOTRE STYLE",
@@ -157,6 +162,7 @@ class SmartWall {
         frame_color: "Couleur Monture",
         lens_color: "Couleur Verre",
         price: "Prix",
+        total_price: "Prix Total",
         save_config: "Sauvegarder",
         email_title: "SAUVEGARDEZ VOTRE LOOK",
         email_subtitle: "Nous vous enverrons tous les détails",
@@ -512,17 +518,23 @@ class SmartWall {
     card.className = 'product-card';
     card.dataset.productId = product.id;
     
+    // Calculate default price
+    const defaultPrice = product.price;
+    
     card.innerHTML = `
-      ${product.sustainability ? '<div class="sustainability-badge">' + this.t('sustainability') + '</div>' : ''}
+      ${product.sustainability ? '<div class="sustainability-badge">♻️ ' + this.t('sustainability') + '</div>' : ''}
       <div class="product-image">
-        <div style="font-size: 120px;">🕶️</div>
+        <div class="product-icon">🕶️</div>
+        <div class="product-badge">${product.model}</div>
       </div>
-      <div class="product-name">${product.name}</div>
-      <div class="product-model">${product.model}</div>
-      <div class="product-price">€${product.price}</div>
-      <button class="btn btn-primary" style="width: 100%; margin-top: 16px;" 
+      <div class="product-info">
+        <div class="product-name">${product.name}</div>
+        <div class="product-model">${product.model}</div>
+        <div class="product-price">€${defaultPrice}</div>
+      </div>
+      <button class="btn btn-primary product-cta" 
               data-action="customize" data-product="${product.id}">
-        ${this.t('customize')}
+        ✨ ${this.t('customize')}
       </button>
     `;
     
@@ -722,22 +734,42 @@ class SmartWall {
   }
 
   resetSession() {
+    // Stop camera if active
+    this.stopCamera();
+    
+    // Reset session data
     this.session = {
       faceShape: null,
       preferences: { style: [], usage: [] },
       recommendations: [],
       selectedProduct: null,
       customization: { frameColor: null, lensColor: null },
-      capturedImage: null
+      capturedImage: null,
+      timestamp: null
     };
     
+    // Reset processing flag
+    this.isProcessing = false;
+    
+    // Clear localStorage
     localStorage.removeItem('rayban_session');
+    
+    // Show welcome screen
     this.showScreen('welcome');
+    
+    // Show notification
+    this.showNotification('Session reset - ready for new customer!', 'success');
   }
 
   navigateBack() {
+    // Stop camera if going back from scan screen
+    if (this.currentScreen === 'scan') {
+      this.stopCamera();
+    }
+    
     const flow = ['welcome', 'scan', 'preferences', 'results', 'customize', 'email', 'success'];
     const currentIndex = flow.indexOf(this.currentScreen);
+    
     if (currentIndex > 0) {
       this.showScreen(flow[currentIndex - 1]);
     }
@@ -747,4 +779,5 @@ class SmartWall {
 // Initialize app when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
   window.smartWall = new SmartWall();
+  console.log('🕶️ Ray-Ban Smart Wall initialized');
 });
